@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: We can use constraint satisfaction to focus on selecting the naked twins .
+A: Constraint propagation is able to be used for solving the naked twins problem by picking up the box and eliminate the possibility step by step.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: It is simple to solve the diagonal sudoku problem, just adding new constraint, diagonal unit.
 
 ### Install
 
