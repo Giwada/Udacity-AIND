@@ -19,45 +19,31 @@ def recognize(models: dict, test_set: SinglesData):
        guesses is a list of the best guess words ordered by the test set word_id
            ['WORDGUESS0', 'WORDGUESS1', 'WORDGUESS2',...]
    """
-    
-    """
-    for each model:
-        for each word (integer):
-            calculate the scores for each model for each model and update the 'probabilities' list.
-            determine the maximum score for each model.
-            Append the corresponding word (the tested word is deemed to be the word for which the model was trained) to the list 'guesses'
-    """
-    """
-    for word, model in models.items():
-            calculate the stores for each model(word) and update the 'probability' list.
-            determine the maximum score for each model(word).
-            Append the corresponding word (the tested word is deemed to be the word for which the model was trained) to the list 'guesses'
-    """
     warnings.filterwarnings("ignore", category=DeprecationWarning)
     probabilities = []
     guesses = []
     # TODO implement the recognizer
     # return probabilities, guesses
     hwords = test_set.get_all_Xlengths()
-    try:
-        for word_id in range(0, len(test_set.get_all_sequences())):
-            words_prob = {}
-            best_score = float('-Inf')
-            guess_word = None
-            X, lengths = hwords[word_id]
-            
-            for word, model in models.items():
-                score = model.score(X, lengths)
-                words_prob[word] = score
-                
-                if score > best_score:
-                    guess_word = word
-                    best_score = score
-            
-            probabilities.append(words_prob)
-            guesses.append(guess_word)
-    except:
-        pass
-    return probabilities, guesses        
     
-    raise NotImplementedError
+    for word_id in range(0, len(test_set.get_all_sequences())):
+        words_prob = {}
+        best_score = float("-inf")
+        best_guess = ""
+        X, lengths = hwords[word_id]
+        
+        for word, model in models.items():
+            try:
+                score = model.score(X, lengths)
+            except:
+                score = float("-inf")
+            
+            words_prob[word] = score
+            if score > best_score:
+                best_guess = word
+                best_score = score
+            
+        probabilities.append(words_prob)
+        guesses.append(best_guess)
+        
+    return probabilities, guesses        
