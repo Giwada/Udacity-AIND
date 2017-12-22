@@ -54,8 +54,7 @@ def custom_score(game, player):
 
 def custom_score_2(game, player):
     """Calculate the heuristic value of a game state from the point of view
-    of the given player.
-    This should be the best heuristic function for your project submission.
+    of the given player.This should be the best heuristic function for your project submission.
     """
     # TODO: finish this function!
     if game.is_loser(player):
