@@ -2,7 +2,7 @@
 Artificial Intelligence Nanodegree / April 2017 - 
 Udacity Artificial Intelligence Nanodegree
 
-A repository of multiple projects and labs done in the Udacity Artificial Intelligence Nanodegree (aind).
+A repository of multiple projects and labs done in the Udacity Artificial Intelligence Nanodegree (AIND).
 
 # Contents
 - Term 1
